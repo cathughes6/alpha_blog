@@ -1,4 +1,16 @@
 <% if @article.errors.any? %>
+    <div class="row">
+        <div class="col-xs-8-offset-2">
+            <div class="panel-panel-danger">
+                <div class="panel-heading">
+                    <h2 class="panel-title>
+                    <%= pluraize(@article.errors.count, "error") %>
+                    prohibited this article from being saved:
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
 <h3>The following errors kept your article from being successfully created:</h3>
  <ul>
      <% @article.errors.full_messages.each do |msg| %>
